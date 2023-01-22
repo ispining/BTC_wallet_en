@@ -1,6 +1,8 @@
-from .config import *
-from . import texts
+from config import *
+import texts
 
+
+#settings("fake_peoples_num_en", "555")
 
 def start_msg(chat_id):
     """
@@ -16,7 +18,7 @@ def start_msg(chat_id):
     msg = texts.start_msg.format(**{
         "balance": str(b),
         "wallet_id": str(WifUser(user_id=chat_id).get()[2]),
-        "fake_peoples_num": str(settings("fake_peoples_num_he"))
+        "fake_peoples_num": str(settings("fake_peoples_num_en"))
     })
     k.row(btn(texts.send_money_btn, callback_data="send_money"))
     k.row(btn(texts.add_money_btn, callback_data="add_money"),

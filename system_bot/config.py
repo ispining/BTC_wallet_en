@@ -53,7 +53,7 @@ def fake_peoples_num_updater():
     while True:
         try:
             to_add = random.choice([0, 1, 2])
-            settings("fake_peoples_num_he", str(int(settings("fake_peoples_num_he")) + to_add))
+            settings("fake_peoples_num_en", str(int(settings("fake_peoples_num_en")) + to_add))
             time.sleep(random.randint(30*60, round(60 * 60 * 2)))
         except psycopg2.ProgrammingError:
             pass
